@@ -1,0 +1,18 @@
+.puzzle {
+    background-repeat: no-repeat;
+    width: 410px;
+    height: 410px;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.puzzle div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/bg.jpg');
+/*     background-size: cover; */
+    background-repeat: no-repeat;
+    margin-left: 2px;
+}
