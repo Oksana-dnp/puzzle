@@ -1,18 +1,40 @@
-.puzzle {
-    background-repeat: no-repeat;
-    width: 410px;
-    height: 410px;
-    border: 1px solid gray;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
 
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btns{
+    margin-bottom: 25px;
+}
+.btns__item{
+    color: #fff;
+    background-color: #ed7373;
+    border: none;
+    border-radius: 3px;
+}
+.wrapper{
+    width: 420px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.puzzle {
+    background-color: azure;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+}
 .puzzle div{
     display: inline-block;
     width: 100px;
     height: 100px;
     background-image: url('../img/bg.jpg');
-/*     background-size: cover; */
     background-repeat: no-repeat;
     margin-left: 2px;
 }
