@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-          <div class="timer"></div>
-    <div class="btns">
+  </head>
+  <body>
+    <div class="container game">
+      <div class="timer"></div>
+      <div class="game__btns">
         <button id="start" class="btns__item">Start game!</button>
         <button id="check-result" class="btns__item">Check result</button>
         <button id="new-game" class="btns__item">New game</button>
+      </div>
+      <div class="wrapper-game">
+        <div class="game__puzzle">
+          <div id="game__puzzle" class="game__puzzle-box sort"></div>
+        </div>
+        <div  class="game__place">
+          <div id="game__place" class="game__place-box sort"></div>
+        </div>
+      </div>
     </div>
-    <div class="wrapper">
-           <div class="puzzle"></div>
-           <div class="work-place"></div>
-    </div>  
-    </div>
 
-
-
- 
-    
     <script src="js/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
