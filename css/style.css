@@ -13,8 +13,9 @@
     flex-direction: column;
 }
 .wrapper-game{
-    max-width: 1100px;
+    max-width: 100%;
     display: flex;
+    /* justify-content: space-between; */
 }
 .game__btns{
     margin-bottom: 25px;
@@ -24,12 +25,20 @@
     background-color: #ed7373;
     border: none;
     border-radius: 3px;
+    padding: 5px 15px;
+    border: 1px solid darkred;
+}
+.btns__item:disabled{
+    background-color: rgb(243, 181, 181);
 }
 .game__puzzle,
 .game__place{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.game__puzzle{
+    margin-right: 15px;
 }
 .game__place-box{
     padding: 10px;
@@ -42,17 +51,43 @@
     background-color: azure;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.game__puzzle-box div{
-    display: inline-block;
+.game__puzzle-box div,
+.game__place-box div{
     width: 125px;
     height: 125px;
     background-image: url('../img/miki_mouse.png');
     background-repeat: no-repeat;
+
+}
+.game__puzzle-box div{
+    display: inline-block;
     margin-left: 2px;
 }
 .game__place-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     margin: 0;
     padding: 0;
     width: 510px;
     height: 510px;
+}
+.modal-window{    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+    background-color: rgba(231, 225, 225, 0.8);
+    position: absolute;
+    z-index: -1;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.modal__check{
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid greem
 }
