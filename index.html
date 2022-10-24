@@ -8,15 +8,28 @@
     <title>Document</title>
   </head>
   <body>
-   <div class="modal-window">
-    <div class="modal__check">
-      <div class="info"></div>
-      <div class="modal-btns">
-        <button class="close">Close</button>
-        <button class="check">Check</button>
+    <div class="modal-window">
+      <div class="modal__check">
+        <div class="info"></div>
+        <div class="modal-btns">
+          <button id="close" data-name="modal-close">Close</button>
+          <button id="check">Check</button>
+        </div>
+  
       </div>
-   </div>
+      <div class="info-lose info-box">
+        <div class="lose-text info-box__text">
+          It's a pity, but you lost
+        </div>
+        <button class="info-lose_btn btn-close">Close</button>
+      </div>
+      <div class="info-win info-box">
+        <div class="win-text info-box__text">
+          Woohoo, well done, you did it!
+        </div>
+        <button class="info-lose_btn btn-close">Close</button>
 
+      </div>
     </div>
     <div class="container game">
       <div id="timer">01:00</div>
