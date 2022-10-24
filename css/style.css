@@ -91,3 +91,36 @@
     background-color: #fff;
     border: 1px solid greem
 }
+.info-lose{
+    position: relative;
+    z-index: 4;
+}
+.info-box{
+    text-align: center;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+.info-box__text{
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    padding: 25px 0;
+    border-top: 1px solid rgb(180, 177, 177);
+    border-bottom: 1px solid rgb(180, 177, 177);
+    margin-bottom: 20px;
+}
+.btn-close{
+    color: #fff;
+    background-color: #ed7373;
+    padding: 7px 7px;
+    border-radius: 5px;
+    border: 1px solid #f13b1a;
+}
