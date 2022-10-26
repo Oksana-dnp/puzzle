@@ -1,9 +1,15 @@
+
 $(document).ready(function () {
   let items = "";
   let counter = 0;
-  
+
+
  
-  function puzzleGenerate() {
+  function puzzleGenerate() { 
+  $(".info-win").fadeOut();
+  $(".modal__check").fadeOut();
+  $(".modal__check").fadeOut();
+  $(".info-lose").fadeOut();
     if(counter !=0 ) counter=0;
     if(items) items = "";
     for (let i = 0, y = 0; i < 4; i++, y -= 125) {
@@ -20,16 +26,29 @@ $(document).ready(function () {
         );
       }
     }
-
-    $(".sort").sortable({
-      connectWith: ".game__puzzle-box, .game__place-box",
-    });
   }
  puzzleGenerate();
   let min, sec;
   let secId;
+  let timerStart = false;
   $("#check-result").prop("disabled", true);
-  $("#start").on("click", function () {
+  $("#start").on("click", startTimer)
+  $('.item').draggable({
+    containment: ".game__place",
+    grid: [125, 125]
+  })
+  $('#game__place').droppable({
+    accept: '.item',    
+    drop: function(){
+      if(timerStart === false){
+         startTimer();
+         timerStart = true;
+      }
+    }
+  })
+
+  //timer functions
+  function startTimer(){
     $("#start").prop("disabled", true);
     $("#check-result").prop("disabled", false);
     min = "00";
@@ -38,6 +57,7 @@ $(document).ready(function () {
       sec--;
       if (sec == 0) {
         showLoseMessage();
+        timerStart = false;
         clearInterval(secId);
       }
       sec < 10
@@ -45,21 +65,18 @@ $(document).ready(function () {
         : $("#timer").text(`${min}:${sec}`);
         sec < 10 ? $(".info").text(`Your still have time? you sure? ${min}:0${sec}`) : $(".info").text(`Your still have time? you sure? ${min}:${sec}`);
     }, 1000);
-  });
-
-
- 
+  }
   function stopTimer() {
     $("#timer").text("01:00");
     clearInterval(secId);
   }
   function resertTime() {
+    timerStart = false;
     min = "00";
     sec = 60;
   }
   let winArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
   let check = true;
-  $(".info-lose").fadeOut();
   $("#check-result").on("click", function () {
     $(".modal-window").css("z-index", "3");
     $(".modal__check").fadeIn();
@@ -83,8 +100,6 @@ $(document).ready(function () {
         break;
       }
     }
-    $(".modal__check").fadeOut();
-    //$(".modal-window").css("z-index", "-1");
 
     if (check) {
       showWinMessage()
@@ -112,6 +127,4 @@ $(document).ready(function () {
     $("#start").prop("disabled", false);
   });
 
-  $(".info-win").fadeOut();
-  $(".modal__check").fadeOut();
 });

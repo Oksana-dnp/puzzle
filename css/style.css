@@ -38,7 +38,7 @@
     align-items: center;
 }
 .game__puzzle{
-    margin-right: 15px;
+    margin-right: 125px;
 }
 .game__place-box{
     padding: 10px;
@@ -46,8 +46,10 @@
 }
 .game__puzzle-box,
 .game__place-box {
-    width: 510px;
-    height: 510px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 500px;
+    height: 500px;
     background-color: azure;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -59,18 +61,11 @@
     background-repeat: no-repeat;
 
 }
-.game__puzzle-box div{
-    display: inline-block;
-    margin-left: 2px;
-}
 .game__place-box{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
     margin: 0;
     padding: 0;
-    width: 510px;
-    height: 510px;
+    width: 500px;
+    height: 500px;
 }
 .modal-window{    
     display: flex;
