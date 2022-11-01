@@ -47,24 +47,34 @@ $(document).ready(function () {
       item.top = ui.offset.top;
       item.left = ui.offset.left;
       item.index = ui.draggable.data("index");
-      $(".item").on("dragstart", function () {
-        console.log("left", ui.offset.left);
+      $(".item").on("dragend", function () {
+        console.log('item-->', item);
+        console.log('top', ui.offset.top);
+        console.log('left', ui.offset.left);
         item.top = ui.offset.top;
         item.left = ui.offset.left;
+        console.log(item)
+        console.log(array)
       });
       let check = true;
       if (array.length > 0) {
         for (let elem of array) {
+console.log('check--<', check)
           if (elem.index == item.index) {
             elem.top = item.top;
             elem.left = item.left;
             check = false;
-            if (check == false) console.log(elem.left, item.left);
+            if (check == false) console.log(array);
+          }
+          if(elem.top == item.top && elem.left == item.left){
+            console.log('index',elem.index);
+            console.log('item', item.left)
+
           }
         }
       }
       if (check) array.push(item);
-      console.log('timerstart-->', timerStart)
+      console.log('timerstart', timerStart)
       if (timerStart === false && $("#start").prop("disabled", false)) {
         timerStart = true;
         startTimer();
@@ -74,6 +84,7 @@ $(document).ready(function () {
 
   //timer functions
   function startTimer() {
+    timerStart = true;
     $("#start").prop("disabled", true);
     $("#check-result").prop("disabled", false);
     min = "00";
@@ -130,6 +141,7 @@ $(document).ready(function () {
       }
       return parseInt(a.top) - parseInt(b.top);
     });
+    console.log('array', array);
     checkArray = array.map((key) => key.index);
     $(".modal__check").fadeOut();
     for (let i = 0; i < array.length; i++) {
