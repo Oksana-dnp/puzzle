@@ -31,6 +31,11 @@
 .btns__item:disabled{
     background-color: rgb(243, 181, 181);
 }
+#timer{
+    font-size: 62px;
+    padding: 15px;
+    letter-spacing: 5px;
+}
 .game__puzzle,
 .game__place{
     display: flex;
@@ -81,10 +86,13 @@
     left: 0;
 }
 .modal__check{
-    width: 200px;
-    height: 100px;
+    text-align: center;
+    width: 500px;
+    height: 170px;
     background-color: #fff;
-    border: 1px solid greem
+    border: 1px solid rgb(214, 211, 211);
+    padding-top: 25px;
+    border-radius: 7px;
 }
 .info-lose{
     position: relative;
@@ -112,10 +120,16 @@
     border-bottom: 1px solid rgb(180, 177, 177);
     margin-bottom: 20px;
 }
-.btn-close{
+.btn-close, .btn-check{
     color: #fff;
-    background-color: #ed7373;
     padding: 7px 7px;
     border-radius: 5px;
+}
+.btn-close{
     border: 1px solid #f13b1a;
+    background-color: #ed7373;
+}
+.btn-check{
+    border: 1px solid #08b92f;
+    background-color: #09d435;
 }
